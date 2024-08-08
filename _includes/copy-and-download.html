@@ -12,8 +12,8 @@
            <button class="import" style="width: 15rem;">Open in playground </button>
         </a>
         {% endif %}
-        <a  href="/catalog/{{type.downloadLink}}"   download>
-          <button  id="resourceDownloadBtn" data-patternId="{{type.patternId}}" onclick="sendCloudTelemetry()" class="import" style="width: 7rem;">Download</button>
+        <a  href="https://playground.meshery.io/api/pattern/download/{{type.patternId}}"   download>
+          <button  id="resourceDownloadBtn" data-patternId="{{type.patternId}}"  class="import" style="width: 7rem;">Download</button>
         </a>
         
           <div class="btn-tooltip-grp">
@@ -44,14 +44,4 @@
 {% endif %}
 
 
-<script>
-
- function sendCloudTelemetry(){
-
-    const element = document.getElementById("resourceDownloadBtn")  
-    const patternId = element.dataset.patternid
-    patternId && fetch(`https://playground.meshery.io/api/pattern/download/${patternId}`)
-  }
-
-</script>
 
